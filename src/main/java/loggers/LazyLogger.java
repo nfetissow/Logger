@@ -1,7 +1,5 @@
 package loggers;
 
-import sun.java2d.pipe.SpanShapeRenderer;
-
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
