@@ -1,4 +1,4 @@
-import loggers.AwesomeLogger;
+import loggers.ImmediateLogger;
 import loggers.Logger;
 
 /**
@@ -7,7 +7,7 @@ import loggers.Logger;
 public class test implements Runnable {
     @Override
     public void run() {
-        Logger log = AwesomeLogger.getInstance(this.getClass().getCanonicalName());
+        Logger log = ImmediateLogger.getInstance(this.getClass().getCanonicalName());
         for(int i = 0; i < 10; ++i) {
             log.log("testing" + i);
             try {
