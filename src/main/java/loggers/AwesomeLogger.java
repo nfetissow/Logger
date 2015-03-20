@@ -29,25 +29,10 @@ public class AwesomeLogger implements Logger {
     @Override
     public void log(String msg) {
         //synchronized (q) {
-            //File logFile = new File(fileName);
             PrintStream printStream = null;
             try {
-
-                printStream = new PrintStream(
-
-                        new BufferedOutputStream(
-
-                                new FileOutputStream(fileName, true)));
-
-                StringBuilder stringBuilder = new StringBuilder();
-
-                stringBuilder.append(this.source);
-                stringBuilder.append(" ");
-                stringBuilder.append(msg);
-                stringBuilder.append(" ");
-                stringBuilder.append(System.currentTimeMillis());
-
-                printStream.println(stringBuilder.toString());
+                printStream = new PrintStream(new BufferedOutputStream(new FileOutputStream(fileName, true)));
+                printStream.println(this.source + " " + msg + " " + System.currentTimeMillis());
             } catch (FileNotFoundException notFoundExc) {
                 System.out.println("File not found");
             } finally {
